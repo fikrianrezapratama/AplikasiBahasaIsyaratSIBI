@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/see_listen_transparent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/shape_deskripsi"
+        android:padding="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btnContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/bahasaBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                android:button="@color/see_listen_transparent"
+                android:text="Bahasa"
+                android:checked="true"
+                android:fontFamily="@font/poppinsmedium"
+                android:textSize="12sp"
+                android:textColor="@drawable/menu_bottomsheet_text"
+                android:textAlignment="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/underlineBahasa"
+                android:layout_width="0dp"
+                android:layout_height="3dp"
+                android:background="@color/see_listen_secondary"
+                app:layout_constraintEnd_toEndOf="@+id/bahasaBtn"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bahasaBtn" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <RadioButton
+                android:id="@+id/pilPenerjemahBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:button="@color/see_listen_transparent"
+                android:text="Penerjemah"
+                android:fontFamily="@font/poppinsmedium"
+                android:textSize="12sp"
+                android:textColor="@drawable/menu_bottomsheet_text"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/bahasaBtn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/underlinePilihan"
+                android:layout_width="0dp"
+                android:layout_height="3dp"
+                android:background="@color/see_listen_secondary"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/pilPenerjemahBtn" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/underline"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/see_listen_neutral1"
+            android:layout_below="@id/btnContainer"/>
+
+        <RelativeLayout
+            android:id="@+id/radioContainer"
+            android:layout_below="@id/underline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioGroup
+                android:id="@+id/radioGroupBahasa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/sibi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/pilihan_penerjemah_selector"
+                    android:button="@color/see_listen_transparent"
+                    android:drawableEnd="@drawable/flag_id"
+                    android:drawablePadding="15dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:layoutDirection="rtl"
+                    android:paddingHorizontal="10dp"
+                    android:text="SIBI"
+                    android:textColor="@drawable/menu_bottomsheet_text"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/bisindo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/pilihan_penerjemah_selector"
+                    android:button="@color/see_listen_transparent"
+                    android:drawableEnd="@drawable/flag_id"
+                    android:drawablePadding="15dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:layoutDirection="rtl"
+                    android:paddingHorizontal="10dp"
+                    android:text="BISINDO"
+                    android:textColor="@drawable/menu_bottomsheet_text"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+                <RadioButton
+                    android:id="@+id/asl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/pilihan_penerjemah_selector"
+                    android:button="@color/see_listen_transparent"
+                    android:drawableEnd="@drawable/flag_us"
+                    android:drawablePadding="15dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:layoutDirection="rtl"
+                    android:paddingHorizontal="10dp"
+                    android:text="America Sign Language"
+                    android:textColor="@drawable/menu_bottomsheet_text"
+                    android:textSize="12sp" />
+
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radioGroupPenerjemah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/alfabet"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/pilihan_penerjemah_selector"
+                    android:button="@color/see_listen_transparent"
+                    android:drawablePadding="15dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:layoutDirection="rtl"
+                    android:paddingHorizontal="10dp"
+                    android:text="Alfabet"
+                    android:textColor="@drawable/menu_bottomsheet_text"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/angka"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/pilihan_penerjemah_selector"
+                    android:button="@color/see_listen_transparent"
+                    android:drawablePadding="15dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:layoutDirection="rtl"
+                    android:paddingHorizontal="10dp"
+                    android:text="Angka"
+                    android:textColor="@drawable/menu_bottomsheet_text"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/kata"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/pilihan_penerjemah_selector"
+                    android:button="@color/see_listen_transparent"
+                    android:drawablePadding="15dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:layoutDirection="rtl"
+                    android:paddingHorizontal="10dp"
+                    android:text="Kata"
+                    android:textColor="@drawable/menu_bottomsheet_text"
+                    android:textSize="12sp" />
+
+                <RadioButton
+                    android:id="@+id/kalimat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/pilihan_penerjemah_selector"
+                    android:button="@color/see_listen_transparent"
+                    android:drawablePadding="15dp"
+                    android:fontFamily="@font/poppinsmedium"
+                    android:layoutDirection="rtl"
+                    android:paddingHorizontal="10dp"
+                    android:text="Kalimat"
+                    android:textColor="@drawable/menu_bottomsheet_text"
+                    android:textSize="12sp" />
+
+            </RadioGroup>
+
+        </RelativeLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/applyContainer"
+            android:layout_below="@id/radioContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/terapkanBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_deskripsi"
+                android:fontFamily="@font/poppinssemibold"
+                android:paddingHorizontal="40dp"
+                android:text="Terapkan"
+                android:minHeight="37dp"
+                android:minWidth="153dp"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                app:icon="@drawable/ic_check"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.7" />
+
+            <Button
+                android:id="@+id/batalbtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/outlined_rectangle"
+                android:text="Batal"
+                android:minHeight="37dp"
+                android:minWidth="73dp"
+                android:textColor="@color/see_listen_primary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/camera_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/view_finder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:scaleType="fillStart" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/banner_camera"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/see_listen_transparent"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="15dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                style="@style/Heading1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:text="Penerjemah"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/textView4"
+                style="@style/Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deteksi Bahasa Isyarat"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2"
+                tools:ignore="HardcodedText" />
+
+            <ImageButton
+                android:id="@+id/penerjemahBtnMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@color/see_listen_transparent"
+                android:contentDescription="@string/buttonmenu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_menu" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.mediapipe.examples.gesturerecognizer.OverlayView
+        android:id="@+id/overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_anchor="@+id/view_finder"
+        app:layout_anchorGravity="center" />
+
+    <!--    <include-->
+    <!--        android:id="@+id/bottom_sheet_layout"-->
+    <!--        layout="@layout/info_bottom_sheets" />-->
+
+    <RelativeLayout
+        android:id="@+id/bottomNavCamera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/see_listen_transparent"
+        android:paddingVertical="25dp">
+
+        <ImageButton
+            android:id="@+id/penerjemahBtnFlashCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:background="@color/see_listen_transparent"
+            android:contentDescription="@string/button_flash_camera"
+            app:srcCompat="@drawable/ic_flash_off" />
+
+        <Button
+            android:id="@+id/pilihanBahasaBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/shape_deskripsi"
+            android:fontFamily="@font/poppinsbold"
+            android:minWidth="133dp"
+            android:minHeight="30dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="0dp"
+            android:text="Sibi"
+            android:textSize="17sp" />
+
+        <ImageButton
+            android:id="@+id/penerjemahBtnFlipCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:background="@color/see_listen_transparent"
+            android:contentDescription="@string/buttonflipcamera"
+            app:srcCompat="@drawable/ic_switch_camera" />
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_results"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginBottom="90dp"
+        android:background="@drawable/shape_deskripsi"
+        android:clipToPadding="true"
+        android:padding="@dimen/result_view_padding"
+        app:layout_anchor="@id/bottomNavCamera"
+        app:layout_anchorGravity="top"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/see_listen_transparent"
+        app:layout_anchor="@id/recyclerview_results"
+        app:layout_anchorGravity="bottom" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

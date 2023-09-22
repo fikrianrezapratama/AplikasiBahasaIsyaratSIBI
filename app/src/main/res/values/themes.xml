@@ -1,0 +1,44 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.GestureRecognizer" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/mp_color_primary</item>
+        <item name="colorPrimaryVariant">@color/mp_color_primary_variant</item>
+        <item name="colorPrimaryDark">@color/mp_color_primary_dark</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/mp_color_secondary</item>
+        <item name="colorSecondaryVariant">@color/mp_color_secondary_variant</item>
+        <item name="colorError">@color/mp_color_error</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Heading1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/poppinsbold</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Heading3" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/poppinsmedium</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Body1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/poppinsregular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!-- Bottom Sheeet -->
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+</resources>
